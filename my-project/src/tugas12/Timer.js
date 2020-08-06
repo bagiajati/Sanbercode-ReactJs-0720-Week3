@@ -4,7 +4,8 @@ class Timer extends Component{
   constructor(props){
     super(props)
     this.state = {
-      time: 200
+      time: 0,
+      date: new Date()
     }
   }
 
@@ -19,7 +20,7 @@ class Timer extends Component{
   }
 
   componentDidUpdate(){
-      if(this.state.time == 0){
+      if(this.state.time === 0){
           this.componentWillUnmount()
       }
   }
@@ -30,16 +31,26 @@ class Timer extends Component{
 
   tick() {
     this.setState({
-      time: this.state.time - 1 
+      time: this.state.time - 1,
+      date: new Date()
     });
   }
 
   render(){
     return(
       <>
-        <h3 style={{textAlign: "center"}}>
-          hitung mundur: {this.state.time}
-        </h3>
+        {
+          this.state.time > 0 && (
+            <>
+              <h3 style={{float: "left"}}>
+                sekarang jam: {this.state.date.toLocaleTimeString()}
+              </h3>
+              <h3 style={{float: "right"}}>
+                hitung mundur: {this.state.time}
+              </h3>
+            </>
+          )
+        }
       </>
     )
   }
