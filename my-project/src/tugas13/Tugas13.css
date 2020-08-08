@@ -1,0 +1,31 @@
+h1{
+    text-align: center;
+}
+  
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+table {
+    width: 50%;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+
+thead {
+    background-color: #999999;
+}
+
+tbody {
+    background-color: #ff4400;
+}
+
+form{
+    text-align: center;
+}
+  
+label{
+    font-weight: bold;
+    margin-right: 10px;
+}  
